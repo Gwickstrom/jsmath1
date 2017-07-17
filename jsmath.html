@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>js math</title>
+    </head>
+    <body>
+        <script>
+            //Math 1
+            function zero_negativity(arr){
+                var neg = 0;
+                for(var i = 0; i < arr.length; i++){
+                    if(arr[i] < 0){
+                        neg++;
+                    }
+
+                }
+                if(neg <= 0){
+                    console.log('true');
+                    console.log(neg);
+                    return true;
+                }
+                else{
+                    console.log('false');
+                    console.log(neg);
+                    return false;
+                }
+            }
+            var arr2 = [2,4,3,4,5,7,-5]
+            zero_negativity(arr2);
+
+            // Math 2
+            function is_even(num){
+                if(num % 2 == 0){
+                    console.log('even is true')
+                    return true
+                }
+                else{
+                    console.log('odd')
+                    return false;
+                }
+            }
+            var num2 = 6;
+            is_even(num2);
+
+            //Math 3
+            function how_many_even(arr){
+                var total_even = 0;
+                var total_odd = 0;
+                for(var i = 0; i < arr.length; i++){
+                    if (is_even(arr[i])){
+                        total_even++;
+                    }
+                    else{
+                        total_odd++;
+                    }
+                }
+                console.log(total_even + " evens");
+                console.log(total_odd + " odds");
+                return total_even;
+            }
+            var arr3 = [2,3,4,5,6];
+            how_many_even(arr3);
+
+
+            //Math 4
+            function getRandomInt(min, max){
+                min = Math.ceil(min);
+                max = Math.floor(max);
+                return Math.floor(Math.random() * (max - min)) + min;
+            }
+            function create_dummy_array(n){
+                //return a array of random numbers between 0 and 9 with a length of n.
+                var array = [];
+                for(var i = 0; i < n; i++){
+                    var randomNum = getRandomInt(0,9);
+                    array.push(randomNum);
+                    // console.log(array + "\n");
+                }
+                return array;
+            }
+            var arrayOfN = create_dummy_array(7);
+            console.log(arrayOfN);
+
+            //Math 5
+            function random_choice(arr){
+                //return a random element of the array, based on it's length. This function should never return undefined.
+                var randomElement = getRandomInt(0, arr.length - 1);
+                return arr[randomElement];
+                // for(var i = 0; i < arr.length; i++){
+                //
+                // }
+            }
+            arr4 = [2,4,10,11,21,42,5,3];
+            var randomElementInArray = random_choice(arr4);
+            console.log(randomElementInArray);
+        </script>
+    </body>
+</html>
